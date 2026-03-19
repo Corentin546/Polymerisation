@@ -1,0 +1,24 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM" />
+    <Platform Name="ARM64" />
+  </Configurations>
+  <Project Path="../../../../Downloads/oui/Polymerisation/Polymerisation.vcxproj">
+    <Deploy />
+  </Project>
+  <Project Path="Base_de_Données/Base_de_Données.vcxproj">
+    <Deploy />
+  </Project>
+  <Project Path="Gest_Entrees_Sorties/Gest_Entrees_Sorties.vcxproj">
+    <Deploy />
+  </Project>
+  <Project Path="IHM/IHM.vcxproj">
+    <Deploy />
+  </Project>
+  <Project Path="Serveur/Serveur.vcxproj">
+    <Deploy />
+  </Project>
+  <Project Path="Systeme/Systeme.vcxproj">
+    <Deploy />
+  </Project>
+</Solution>
