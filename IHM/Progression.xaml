@@ -1,0 +1,211 @@
+<Window x:Class="Poly4.Progression"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Machine de Polymérisation — En cours"
+        Height="620" Width="900"
+        WindowStartupLocation="CenterScreen"
+        Background="#1A2332"
+        ResizeMode="CanMinimize"
+        Closing="Window_Closing">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ═══════════════════════════════════════ TASKBAR ═══════════════════════════════════════ -->
+        <Border Grid.Row="0" Style="{StaticResource TaskBarStyle}">
+            <Grid Margin="16,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo Zone -->
+                <Border Grid.Column="0" Width="42" Height="42" CornerRadius="8"
+                        Background="#00C4FF22" BorderBrush="#00C4FF55" BorderThickness="1"
+                        VerticalAlignment="Center">
+                    <TextBlock Text="⬡" FontSize="22" Foreground="#00C4FF"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+
+                <!-- Title -->
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="MACHINE DE POLYMÉRISATION"
+                               FontFamily="Segoe UI Light" FontSize="18" FontWeight="Light"
+                               Foreground="#E8F4FD"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="CYCLE EN COURS"
+                               FontFamily="Segoe UI" FontSize="9"
+                               Foreground="#00C4FF"
+                               HorizontalAlignment="Center" Margin="0,1,0,0"/>
+                </StackPanel>
+
+                <!-- Status indicator -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Ellipse x:Name="StatusDot" Width="8" Height="8" Fill="#00E5A0"
+                             VerticalAlignment="Center" Margin="0,0,8,0">
+                        <Ellipse.Triggers>
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                         From="1" To="0.2" Duration="0:0:0.8"
+                                                         AutoReverse="True"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Ellipse.Triggers>
+                    </Ellipse>
+                    <TextBlock Text="EN COURS" FontFamily="Segoe UI" FontSize="10"
+                               Foreground="#00E5A0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ═══════════════════════════════════════ CONTENT ═══════════════════════════════════════ -->
+        <Grid Grid.Row="1" Margin="30,30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header info -->
+            <Border Grid.Row="0" Background="#1E2D40" CornerRadius="10"
+                    Padding="24,16" BorderBrush="#00C4FF22" BorderThickness="1"
+                    Margin="0,0,0,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Cycles -->
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock Text="CYCLES" FontFamily="Segoe UI" FontSize="9"
+                                   FontWeight="SemiBold" Foreground="#7A9BBE"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="InfoCycles" Text="—"
+                                   FontFamily="Segoe UI Light" FontSize="28"
+                                   Foreground="#00C4FF" HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!-- Taille -->
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock Text="TAILLE" FontFamily="Segoe UI" FontSize="9"
+                                   FontWeight="SemiBold" Foreground="#7A9BBE"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="InfoTaille" Text="—"
+                                   FontFamily="Segoe UI Light" FontSize="28"
+                                   Foreground="#00C4FF" HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!-- Cycle actuel -->
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                        <TextBlock Text="CYCLE ACTUEL" FontFamily="Segoe UI" FontSize="9"
+                                   FontWeight="SemiBold" Foreground="#7A9BBE"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="InfoCycleActuel" Text="1"
+                                   FontFamily="Segoe UI Light" FontSize="28"
+                                   Foreground="#00E5A0" HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!-- Temps restant -->
+                    <StackPanel Grid.Column="3" HorizontalAlignment="Center">
+                        <TextBlock Text="TEMPS RESTANT" FontFamily="Segoe UI" FontSize="9"
+                                   FontWeight="SemiBold" Foreground="#7A9BBE"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="InfoTempsRestant" Text="—"
+                                   FontFamily="Segoe UI Light" FontSize="28"
+                                   Foreground="#E8F4FD" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Main Progress Area -->
+            <Border Grid.Row="1" Background="#1E2D40" CornerRadius="10"
+                    Padding="30,24" BorderBrush="#00C4FF22" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center">
+
+                    <!-- Progress Label -->
+                    <Grid Margin="0,0,0,12">
+                        <TextBlock Text="PROGRESSION GLOBALE"
+                                   FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold"
+                                   Foreground="#7A9BBE"
+                                   HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="TxtPourcentage" Text="0%"
+                                   FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold"
+                                   Foreground="#00C4FF" HorizontalAlignment="Right"/>
+                    </Grid>
+
+                    <!-- Main Progress Bar -->
+                    <ProgressBar x:Name="MainProgressBar"
+                                 Style="{StaticResource ProgressBarStyle}"
+                                 Minimum="0" Maximum="100" Value="0"
+                                 Height="14"/>
+
+                    <!-- Phase label -->
+                    <TextBlock x:Name="TxtPhase" Text="Initialisation..."
+                               FontFamily="Segoe UI" FontSize="13"
+                               Foreground="#7A9BBE" Margin="0,16,0,0"
+                               HorizontalAlignment="Center"/>
+
+                    <!-- Cycle progress -->
+                    <TextBlock Text="PROGRESSION DU CYCLE EN COURS"
+                               FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold"
+                               Foreground="#7A9BBE"
+                               Margin="0,28,0,12"/>
+
+                    <ProgressBar x:Name="CycleProgressBar"
+                                 Style="{StaticResource ProgressBarStyle}"
+                                 Minimum="0" Maximum="100" Value="0"
+                                 Height="8"/>
+
+                </StackPanel>
+            </Border>
+
+            <!-- Bottom: Temps écoulé + Arrêt -->
+            <Grid Grid.Row="2" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Temps écoulé -->
+                <Border Grid.Column="0" Background="#1E2D40" CornerRadius="10"
+                        Padding="20,14" BorderBrush="#00C4FF22" BorderThickness="1"
+                        Margin="0,0,16,0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="⏱" FontSize="16" Foreground="#7A9BBE"
+                                   VerticalAlignment="Center" Margin="0,0,12,0"/>
+                        <StackPanel>
+                            <TextBlock Text="TEMPS ÉCOULÉ"
+                                       FontFamily="Segoe UI" FontSize="9" FontWeight="SemiBold"
+                                       Foreground="#7A9BBE"/>
+                            <TextBlock x:Name="TxtTempsEcoule" Text="0 sec"
+                                       FontFamily="Segoe UI Light" FontSize="22"
+                                       Foreground="#E8F4FD"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Arrêt Button -->
+                <Button Grid.Column="1" x:Name="BtnArret"
+                        Style="{StaticResource DangerButtonStyle}"
+                        Width="160" Height="58"
+                        FontSize="16" FontWeight="Bold"
+                        Click="BtnArret_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="⏹  " FontSize="14" VerticalAlignment="Center"/>
+                        <TextBlock Text="ARRÊT" FontSize="14" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

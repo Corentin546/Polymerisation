@@ -1,0 +1,100 @@
+<Window x:Class="Poly4.Parametres"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Paramètres"
+        Height="480" Width="600"
+        WindowStartupLocation="CenterOwner"
+        Background="#1A2332"
+        ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Taskbar -->
+        <Border Grid.Row="0" Style="{StaticResource TaskBarStyle}">
+            <Grid Margin="16,0">
+                <TextBlock Text="PARAMÈTRES"
+                           FontFamily="Segoe UI Light" FontSize="18"
+                           Foreground="#E8F4FD"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" Margin="30,24">
+
+            <!-- Durée par cycle -->
+            <Border Background="#1E2D40" CornerRadius="10" Padding="24,18"
+                    BorderBrush="#00C4FF22" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="DURÉE DE BASE PAR CYCLE (minutes)"
+                               FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold"
+                               Foreground="#7A9BBE" Margin="0,0,0,12"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Slider x:Name="SliderDureeBase"
+                                Style="{StaticResource SliderStyle}"
+                                Minimum="1" Maximum="60" Value="12"
+                                TickFrequency="1" IsSnapToTickEnabled="True"
+                                Width="350"
+                                ValueChanged="SliderDureeBase_Changed"/>
+                        <TextBlock x:Name="TxtDureeBase" Text="12 min"
+                                   FontFamily="Segoe UI Light" FontSize="20"
+                                   Foreground="#00C4FF" Margin="20,0,0,0"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Durée nettoyage -->
+            <Border Background="#1E2D40" CornerRadius="10" Padding="24,18"
+                    BorderBrush="#00C4FF22" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="DURÉE DE NETTOYAGE (minutes)"
+                               FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold"
+                               Foreground="#7A9BBE" Margin="0,0,0,12"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Slider x:Name="SliderDureeNettoyage"
+                                Style="{StaticResource SliderStyle}"
+                                Minimum="1" Maximum="30" Value="5"
+                                TickFrequency="1" IsSnapToTickEnabled="True"
+                                Width="350"
+                                ValueChanged="SliderDureeNettoyage_Changed"/>
+                        <TextBlock x:Name="TxtDureeNettoyage" Text="5 min"
+                                   FontFamily="Segoe UI Light" FontSize="20"
+                                   Foreground="#00C4FF" Margin="20,0,0,0"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Info version -->
+            <Border Background="#1E2D40" CornerRadius="10" Padding="24,18"
+                    BorderBrush="#00C4FF22" BorderThickness="1">
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="INFORMATIONS SYSTÈME"
+                                   FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold"
+                                   Foreground="#7A9BBE" Margin="0,0,0,8"/>
+                        <TextBlock Text="Machine de Polymérisation — v1.0.0"
+                                   FontFamily="Segoe UI" FontSize="13"
+                                   Foreground="#E8F4FD"/>
+                        <TextBlock Text="Interface de contrôle Poly4"
+                                   FontFamily="Segoe UI" FontSize="11"
+                                   Foreground="#7A9BBE" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Bouton Fermer -->
+            <Button Style="{StaticResource PrimaryButtonStyle}"
+                    HorizontalAlignment="Right"
+                    Width="140" Height="44"
+                    Click="BtnFermer_Click">
+                <TextBlock Text="FERMER" FontSize="13"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
