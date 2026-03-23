@@ -24,7 +24,7 @@ namespace Poly4
                 UpdateEstimation();
             }
         }
-
+         // TEST sauvegarde
         private void SliderTaille_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if (TxtTaille != null)
