@@ -3,22 +3,22 @@
     <Platform Name="ARM" />
     <Platform Name="ARM64" />
   </Configurations>
-  <Project Path="../../../../Downloads/oui/Polymerisation/Polymerisation.vcxproj">
+  <Project Path="../../../../Downloads/oui/Polymerisation/Polymerisation.vcxproj" Id="0bd60d95-91ff-409a-b927-ea6952bb4cb2">
     <Deploy />
   </Project>
-  <Project Path="Base_de_Données/Base_de_Données.vcxproj">
+  <Project Path="Base_de_Données/Base_de_Données.vcxproj" Id="6250768d-bc9a-4b91-83dd-d03e7963b97e">
     <Deploy />
   </Project>
-  <Project Path="Gest_Entrees_Sorties/Gest_Entrees_Sorties.vcxproj">
+  <Project Path="Gest_Entrees_Sorties/Gest_Entrees_Sorties.vcxproj" Id="86564d29-2d7f-4872-b95e-55ff68bcc615">
     <Deploy />
   </Project>
-  <Project Path="IHM/IHM.vcxproj">
+  <Project Path="IHM/IHM.vcxproj" Id="4282abd3-7d9a-4363-9c6c-42c47fcb2076">
     <Deploy />
   </Project>
-  <Project Path="Serveur/Serveur.vcxproj">
+  <Project Path="Serveur/Serveur.vcxproj" Id="d60f375e-d762-4ae0-a81d-3c3796bdbd9f">
     <Deploy />
   </Project>
-  <Project Path="Systeme/Systeme.vcxproj">
+  <Project Path="Systeme/Systeme.vcxproj" Id="3d02aaf7-ba44-4f11-a2d9-4cdd8ac92421">
     <Deploy />
   </Project>
 </Solution>

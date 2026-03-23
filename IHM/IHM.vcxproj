@@ -18,6 +18,23 @@
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Downloads\Poly\.gitattributes" />
+    <None Include="..\..\..\..\..\Downloads\Poly\.gitignore" />
+    <None Include="..\..\..\..\..\Downloads\Poly\App.xaml.cs" />
+    <None Include="..\..\..\..\..\Downloads\Poly\Menu.xaml.cs" />
+    <None Include="..\..\..\..\..\Downloads\Poly\Parametres.xaml.cs" />
+    <None Include="..\..\..\..\..\Downloads\Poly\Poly4.csproj" />
+    <None Include="..\..\..\..\..\Downloads\Poly\Poly4.sln" />
+    <None Include="..\..\..\..\..\Downloads\Poly\Progression.xaml.cs" />
+    <None Include="..\..\..\..\..\Downloads\Poly\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\..\..\..\..\Downloads\Poly\App.xaml" />
+    <Page Include="..\..\..\..\..\Downloads\Poly\Menu.xaml" />
+    <Page Include="..\..\..\..\..\Downloads\Poly\Parametres.xaml" />
+    <Page Include="..\..\..\..\..\Downloads\Poly\Progression.xaml" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4282abd3-7d9a-4363-9c6c-42c47fcb2076}</ProjectGuid>
     <Keyword>Linux</Keyword>
@@ -64,22 +81,6 @@
       <Message>exporte la broche 17 à l'aide de l'utilitaire gpio pour nous permettre d'exécuter le programme blink sans sudo</Message>
     </RemotePostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\App.xaml" />
-    <Page Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\Menu.xaml" />
-    <Page Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\Parametres.xaml" />
-    <Page Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\Progression.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\App.xaml.cs" />
-    <None Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\Menu.xaml.cs" />
-    <None Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\Parametres.xaml.cs" />
-    <None Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\Poly4.csproj" />
-    <None Include="..\..\..\..\..\Downloads\Projet_Polymerisation-IHM\Projet_Polymerisation-IHM\Progression.xaml.cs" />
-  </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
