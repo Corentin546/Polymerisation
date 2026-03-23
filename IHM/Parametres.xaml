@@ -81,7 +81,7 @@
                         <TextBlock Text="Machine de Polymérisation — v1.0.0"
                                    FontFamily="Segoe UI" FontSize="13"
                                    Foreground="#E8F4FD"/>
-                        <TextBlock Text="Interface de contrôle Poly4"
+                        <TextBlock Text="Interface de contrôle"
                                    FontFamily="Segoe UI" FontSize="11"
                                    Foreground="#7A9BBE" Margin="0,4,0,0"/>
                     </StackPanel>

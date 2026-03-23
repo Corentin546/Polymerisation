@@ -167,34 +167,36 @@
                 </Setter>
             </Style>
 
-            <!-- CheckBox Style -->
-            <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+            <!-- RadioButton Style -->
+            <Style x:Key="RadioButtonStyle" TargetType="RadioButton">
                 <Setter Property="Foreground" Value="#E8F4FD"/>
                 <Setter Property="FontFamily" Value="Segoe UI"/>
                 <Setter Property="FontSize" Value="13"/>
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="CheckBox">
+                        <ControlTemplate TargetType="RadioButton">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <Border x:Name="checkBorder" Width="20" Height="20"
+                                <Border x:Name="radioBorder" Width="20" Height="20"
                                         BorderBrush="#7A9BBE" BorderThickness="2"
-                                        CornerRadius="4" Background="Transparent"
+                                        CornerRadius="10" Background="Transparent"
                                         VerticalAlignment="Center">
-                                    <TextBlock x:Name="checkMark" Text="✓" FontSize="12"
-                                               Foreground="#00C4FF" HorizontalAlignment="Center"
-                                               VerticalAlignment="Center" Visibility="Collapsed"/>
+                                    <Ellipse x:Name="radioMark" Width="10" Height="10"
+                                             Fill="#00C4FF"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             Visibility="Collapsed"/>
                                 </Border>
                                 <ContentPresenter Margin="10,0,0,0" VerticalAlignment="Center"/>
                             </StackPanel>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsChecked" Value="True">
-                                    <Setter TargetName="checkBorder" Property="Background" Value="#00C4FF22"/>
-                                    <Setter TargetName="checkBorder" Property="BorderBrush" Value="#00C4FF"/>
-                                    <Setter TargetName="checkMark" Property="Visibility" Value="Visible"/>
+                                    <Setter TargetName="radioBorder" Property="Background" Value="#00C4FF22"/>
+                                    <Setter TargetName="radioBorder" Property="BorderBrush" Value="#00C4FF"/>
+                                    <Setter TargetName="radioMark" Property="Visibility" Value="Visible"/>
                                 </Trigger>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="checkBorder" Property="Background" Value="#7A9BBE22"/>
+                                    <Setter TargetName="radioBorder" Property="Background" Value="#7A9BBE22"/>
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>

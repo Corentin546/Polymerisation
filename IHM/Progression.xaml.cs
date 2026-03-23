@@ -27,7 +27,7 @@ namespace Poly4
 
             // Affiche les infos
             InfoCycles.Text = cycles.ToString();
-            InfoTaille.Text = $"{taille} mm";
+            InfoTaille.Text = $"{taille} cm";
             InfoTempsRestant.Text = FormatTime(_totalSeconds);
 
             // Démarre le timer (simulation en temps accéléré — 1 tick = 1 sec simulée)

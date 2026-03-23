@@ -41,20 +41,24 @@
                                FontFamily="Segoe UI Light" FontSize="18" FontWeight="Light"
                                Foreground="#E8F4FD"
                                HorizontalAlignment="Center"/>
-                    <TextBlock Text="SYSTÈME DE CONTRÔLE v1.0"
+                    <TextBlock Text="SYSTÈME DE CONTRÔLE
+                               "
                                FontFamily="Segoe UI" FontSize="9"
                                Foreground="#7A9BBE"
-                               HorizontalAlignment="Center" Margin="0,1,0,0"/>
+                               HorizontalAlignment="Center" Margin="0,1,0,0" Height="15" Width="104"/>
                 </StackPanel>
 
                 <!-- Settings Button -->
                 <Button Grid.Column="2" x:Name="BtnSettings"
                         Style="{StaticResource GhostButtonStyle}"
-                        Width="42" Height="42" Padding="0"
+                        Width="46" Height="46" Padding="11"
                         Click="BtnSettings_Click"
+                        ToolTip="Paramètres"
                         VerticalAlignment="Center">
-                    <TextBlock Text="⚙" FontSize="18" Foreground="#7A9BBE"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Viewbox Stretch="Uniform">
+                        <Path Fill="#7A9BBE"
+                              Data="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+                    </Viewbox>
                 </Button>
             </Grid>
         </Border>
@@ -86,12 +90,17 @@
                                     Minimum="1" Maximum="10" Value="1"
                                     TickFrequency="1" IsSnapToTickEnabled="True"
                                     ValueChanged="SliderCycles_ValueChanged"
-                                    Margin="0,8,20,4"/>
+                                    Margin="0,8,0,4"/>
                             <!-- Tick labels -->
-                            <Grid Margin="0,4,20,0">
-                                <TextBlock Text="1" FontSize="10" Foreground="#7A9BBE55" HorizontalAlignment="Left"/>
-                                <TextBlock Text="5" FontSize="10" Foreground="#7A9BBE55" HorizontalAlignment="Center"/>
-                                <TextBlock Text="10" FontSize="10" Foreground="#7A9BBE55" HorizontalAlignment="Right"/>
+                            <Grid Margin="0,2,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="1"  FontSize="10" Foreground="#7A9BBE55"/>
+                                <TextBlock Grid.Column="1" Text="5"  FontSize="10" Foreground="#7A9BBE55" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="10" FontSize="10" Foreground="#7A9BBE55"/>
                             </Grid>
                         </StackPanel>
                         <Border Grid.Column="1" Background="#0F1923" CornerRadius="8"
@@ -118,19 +127,24 @@
                             <ColumnDefinition Width="120"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="TAILLE"
+                            <TextBlock Text="TAILLE DE LA PIÈCE"
                                        FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold"
                                        Foreground="#7A9BBE" Margin="0,0,0,10"/>
                             <Slider x:Name="SliderTaille"
                                     Style="{StaticResource SliderStyle}"
-                                    Minimum="5" Maximum="30" Value="5"
-                                    TickFrequency="5" IsSnapToTickEnabled="True"
+                                    Minimum="1" Maximum="30" Value="10"
+                                    TickFrequency="1" IsSnapToTickEnabled="True"
                                     ValueChanged="SliderTaille_ValueChanged"
-                                    Margin="0,8,20,4"/>
-                            <Grid Margin="0,4,20,0">
-                                <TextBlock Text="5" FontSize="10" Foreground="#7A9BBE55" HorizontalAlignment="Left"/>
-                                <TextBlock Text="15" FontSize="10" Foreground="#7A9BBE55" HorizontalAlignment="Center"/>
-                                <TextBlock Text="30" FontSize="10" Foreground="#7A9BBE55" HorizontalAlignment="Right"/>
+                                    Margin="0,8,0,4"/>
+                            <Grid Margin="0,2,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="1"  FontSize="10" Foreground="#7A9BBE55"/>
+                                <TextBlock Grid.Column="1" Text="15" FontSize="10" Foreground="#7A9BBE55" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="30" FontSize="10" Foreground="#7A9BBE55"/>
                             </Grid>
                         </StackPanel>
                         <Border Grid.Column="1" Background="#0F1923" CornerRadius="8"
@@ -138,32 +152,41 @@
                                 HorizontalAlignment="Right" VerticalAlignment="Center"
                                 Width="100" Height="58">
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock x:Name="TxtTaille" Text="5"
+                                <TextBlock x:Name="TxtTaille" Text="10"
                                            FontFamily="Segoe UI Light" FontSize="32"
                                            Foreground="#00C4FF" HorizontalAlignment="Center"/>
-                                <TextBlock Text="mm" FontSize="9" Foreground="#7A9BBE"
+                                <TextBlock Text="cm" FontSize="9" Foreground="#7A9BBE"
                                            HorizontalAlignment="Center" Margin="0,-4,0,0"/>
                             </StackPanel>
                         </Border>
                     </Grid>
                 </Border>
 
-                <!-- Card: Options (Checkboxes) -->
+                <!-- Card: Options (RadioButtons exclusifs) -->
                 <Border Background="#1E2D40" CornerRadius="10" Padding="24,18"
                         BorderBrush="#00C4FF22" BorderThickness="1">
                     <StackPanel>
-                        <TextBlock Text="OPTIONS"
+                        <TextBlock Text="OPTIONS DE NETTOYAGE"
                                    FontFamily="Segoe UI" FontSize="10" FontWeight="SemiBold"
                                    Foreground="#7A9BBE" Margin="0,0,0,14"/>
-                        <CheckBox x:Name="ChkNettoyageCycle"
-                                  Style="{StaticResource CheckBoxStyle}"
-                                  Content="Nettoyage en fin de cycle"
-                                  Checked="Options_Changed" Unchecked="Options_Changed"
-                                  Margin="0,0,0,10"/>
-                        <CheckBox x:Name="ChkNettoyageSeul"
-                                  Style="{StaticResource CheckBoxStyle}"
-                                  Content="Nettoyage seul"
-                                  Checked="Options_Changed" Unchecked="Options_Changed"/>
+                        <RadioButton x:Name="ChkAucunNettoyage"
+                                     GroupName="Nettoyage"
+                                     Style="{StaticResource RadioButtonStyle}"
+                                     Content="Aucun nettoyage"
+                                     IsChecked="True"
+                                     Checked="Options_Changed"
+                                     Margin="0,0,0,10"/>
+                        <RadioButton x:Name="ChkNettoyageCycle"
+                                     GroupName="Nettoyage"
+                                     Style="{StaticResource RadioButtonStyle}"
+                                     Content="Nettoyage en fin de cycle"
+                                     Checked="Options_Changed"
+                                     Margin="0,0,0,10"/>
+                        <RadioButton x:Name="ChkNettoyageSeul"
+                                     GroupName="Nettoyage"
+                                     Style="{StaticResource RadioButtonStyle}"
+                                     Content="Nettoyage seul (sans cycles)"
+                                     Checked="Options_Changed"/>
                     </StackPanel>
                 </Border>
 
