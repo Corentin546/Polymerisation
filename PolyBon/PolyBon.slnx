@@ -1,0 +1,21 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM" />
+    <Platform Name="ARM64" />
+  </Configurations>
+  <Project Path="../Oui/Base_de_Données/Base_de_Données.vcxproj" Id="5bf62d3d-03fa-421b-8bb1-95ea9e633a37">
+    <Deploy />
+  </Project>
+  <Project Path="../Oui/IHM/IHM.vcxproj" Id="8f8d3ff9-90d2-41b3-b13b-0a3ce07be508">
+    <Deploy />
+  </Project>
+  <Project Path="../Oui/Serveur/Serveur.vcxproj" Id="f56c9814-8faf-44d1-a357-42127655dcee">
+    <Deploy />
+  </Project>
+  <Project Path="../Systeme/Système/Système.vcxproj" Id="465c0d3b-db9b-4f48-8298-c24a164f7fb0">
+    <Deploy />
+  </Project>
+  <Project Path="Gest_ES/Gest_ES.vcxproj" Id="44450aff-bb32-4341-9dfc-1f5542b46d2e">
+    <Deploy />
+  </Project>
+</Solution>
