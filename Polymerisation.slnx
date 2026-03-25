@@ -9,6 +9,9 @@
   <Project Path="Base_de_Données/Base_de_Données.vcxproj" Id="6250768d-bc9a-4b91-83dd-d03e7963b97e">
     <Deploy />
   </Project>
+  <Project Path="Bouton_Led/Bouton_Led.vcxproj" Id="75cde972-2db2-4af8-951b-aea3542e12a1">
+    <Deploy />
+  </Project>
   <Project Path="Gest_Entrees_Sorties/Gest_Entrees_Sorties.vcxproj" Id="86564d29-2d7f-4872-b95e-55ff68bcc615">
     <Deploy />
   </Project>
