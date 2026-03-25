@@ -15,7 +15,13 @@
   <Project Path="../Systeme/Système/Système.vcxproj" Id="465c0d3b-db9b-4f48-8298-c24a164f7fb0">
     <Deploy />
   </Project>
+  <Project Path="boutontest/boutontest.vcxproj" Id="cee37a0e-6d88-43bd-951e-90bab28a1aa4">
+    <Deploy />
+  </Project>
   <Project Path="Gest_ES/Gest_ES.vcxproj" Id="44450aff-bb32-4341-9dfc-1f5542b46d2e">
+    <Deploy />
+  </Project>
+  <Project Path="testled/testled.vcxproj" Id="80ce9edb-9c7b-47b5-8ffc-3846578d3871">
     <Deploy />
   </Project>
 </Solution>
